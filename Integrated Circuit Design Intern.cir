@@ -1,0 +1,9 @@
+* Low-Pass Filter Circuit Simulation
+R1 N001 N002 1k       ; Resistor of 1k Ohms
+C1 N002 0 1uF         ; Capacitor of 1uF
+V1 N001 0 SIN(0 1 1k) ; Sine wave input with 1V amplitude and 1kHz frequency
+
+.TRAN 1us 5ms         ; Transient analysis with 1us step for 5ms total time
+.PRINT TRAN V(N002)   ; Print output voltage at node N002
+.PLOT TRAN V(N002)    ; Plot output voltage at node N002
+.END
